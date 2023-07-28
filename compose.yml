@@ -57,20 +57,6 @@ services:
       - SSL_CERT_NAME=tls.crt
       - SSL_KEY_NAME=tls.key
       - TZ=America/Los_Angeles
-    command: [
-            "/usr/bin/java",
-            "-server",
-            "-Xms256m",
-            "-Xmx640m",
-            "-XX:MaxHeapFreeRatio=60",
-            "-XX:MinHeapFreeRatio=30",
-            "-XX:+HeapDumpOnOutOfMemoryError",
-            "-XX:HeapDumpPath=/opt/tplink/EAPController/logs/java_heapdump.hprof",
-            "-Djava.awt.headless=true",
-            "-cp",
-            "/opt/tplink/EAPController/lib/*::/opt/tplink/EAPController/properties:",
-            "com.tplink.smb.omada.starter.OmadaLinuxMain"
-        ]
     networks:
       nw:
         ipv4_address: 192.168.49.2
